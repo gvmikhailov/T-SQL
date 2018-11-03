@@ -1,6 +1,7 @@
 USE IS
 SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
-SELECT table1.GoodsName, table2.CategoryName
-FROM IS.GOODS table1
-LEFT JOIN IS.CATEGORIES table2 ON table1.GoodsID = table2.GoodsID
-ORDER BY table1.GoodsName
+SELECT table2.GoodsName, table3.CategoryName
+FROM IS.ISHOP table1
+JOIN IS.GOODS table2 ON table1.GoodsID = table2.GoodsID
+LEFT JOIN IS.CATEGORIES table3 ON table1.CategoryID = table3.CategoryID
+ORDER BY table2.GoodsName
